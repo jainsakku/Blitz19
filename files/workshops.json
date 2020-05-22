@@ -1,0 +1,26 @@
+{
+	"FineArts":{
+    "MetalSculpturing":{
+      "isTeam":true
+    },
+    "BlockPrinting":{
+      "isTeam":true
+    }
+  }, "Technology": {
+    "MachineLearning": {
+      "isTeam": false
+    },
+    "InternetOfThings": {
+      "isTeam": false
+    },
+    "SixthSense": {
+      "isTeam": false
+    },
+    "EthicalHacking": {
+      "isTeam": false
+    },
+    "AutmobilesICEngines": {
+      "isTeam": false
+    }
+  }
+}

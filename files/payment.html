@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blitzschlag | Payment</title>
+    <meta name="description" content="Registration Payment, Blitzschlag 2019" />
+    <meta name="keywords" content="Blitzschlag MNIT Events" />
+    <meta name="author" content="Saksham Jain"/>
+    <link rel="shortcut icon" href="./src/images/favicon.ico">
+    <link rel="stylesheet" href="../base.css"/>
+    <link rel="stylesheet" href="./payment.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Cinzel" rel="stylesheet">
+</head>
+<body>
+    <aside id="nav-container">
+        <div id="nav-overlay"></div>
+        <nav id="nav-fullscreen" role="navigation">
+            <ul>
+                <li><a class="nav-link" href="/#home">Home</a></li>
+                <li><a class="nav-link" href="/#events">Events</a></li>
+                <!-- <li><a class="nav-link" href="/timeline">Timeline</a></li> -->
+                <li><a class="nav-link" href="/celeb">Pronites</a></li>
+                <li><a class="nav-link" href="/Flagships">Flagship Events</a></li>
+                <li><a class="nav-link" href="/workshops">EISYSTEMS Workshop</a></li>
+                <li><a class="nav-link" href="/#registration">Register</a></li>
+                <li><a class="nav-link" href="/payment">Hospitality</a></li>
+                <li><a class="nav-link" target="_blank" href="https://myimaginestore.com/university/">Imagine Lucky Draw</a></li>
+                <li><a class="nav-link" href="/#contact">Contact Us</a></li>
+                <li><a class="nav-link" href="/team">Our Team</a></li>
+            </ul>
+        </nav>
+
+        <a id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </aside>
+        <img id="Blitzschlag" src="./src/images/Font.png" />
+    <!-- <h1>
+        Payment
+    </h1>
+    <header>
+        <button disabled>Pay</button>
+        <p>Payment link will be available soon</p>
+    </header>     -->
+    <table>
+        <thead>
+            <tr>
+                <th id="top--left" class="event_head" scope="col">Event</th>
+                <th id="top--right" class="fee_head" scope="col">Fees</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="event_data" >Event Registration (Excluding Pronite)  - 1 Day</td>
+                <td class="fee_data">Rs. 150</td>
+            </tr>
+            <tr>
+                <td class="event_data" >Event Registration (Excluding Flagship Events)  - 3 Days</td>
+                <td class="fee_data">Rs. 200</td>
+            </tr>
+            <tr>
+                <td class="event_data" >Event registration (Ramba Samba)</td>
+                <td class="fee_data">Rs. 300</td>
+            </tr>
+            <tr>
+                <td class="event_data" >Event registration (Panache)</td>
+                <td class="fee_data">Rs. 150</td>
+            </tr>
+            <tr>
+                <td class="event_data" >Event Registration + Flagship Events (3 Days)</td>
+                <td class="fee_data">Rs. 700</td>
+            </tr>
+            <tr>
+                <td class="event_data">Event Registration + Flagship Events + Accomodation</td>
+                <td class="fee_data">Rs. 1200</td>
+            </tr>
+            <tr>
+                <td class="event_data" >Event Registration + Pronite (Day 1)</td>
+                <td class="fee_data">Rs. 400</td>
+            </tr>
+            <tr>
+                <td class="event_data" >Event Registration + Pronite (Day 3)</td>
+                <td class="fee_data">Rs. 500</td>
+            </tr>
+            <tr>
+                <td class="event_data">Workshop + Pronite</td>
+                <td class="fee_data">Rs. 1600</td>
+            </tr>
+            <tr>
+                <td class="event_data">Workshop + Accomodation</td>
+                <td class="fee_data">Rs. 1500</td>
+            </tr>
+            <tr>
+                <td id="bottom--left" class="event_data">Workshop + Pronite + Accomodation</td>
+                <td id="bottom--right" class="fee_data">Rs. 2000</td>
+            </tr>
+        </tbody>
+    </table>
+    <footer id="terms">
+        <section>
+            <p>Payment must be made directly to bank account</p>
+            <h3 class="term">Bank details:</h3>
+                <ul>
+                    <li>Account Number: 00000037347860345</li>
+                    <li>IFSC No.: SBIN0015921</li>
+                    <li>Name: MALAVIYA NATIONAL INSTITUTE OF TECHNOLOGY JLN MARG JAIPUR</li>
+                </ul>
+        </section>
+        <section>
+            <h3>Rules and Regulations</h3>
+            <li class="term">Double check your entries before paying.</li>
+            <li class="term">You must pay the exact amount, any variations will not be accepted.</li>
+            <li class="term">You must comply with the rules and regulations of MNIT Hostel.</li>
+            <li class="term">Accomodation will be on a sharing basis and does not include food/drinks.</li>
+            <li class="term">You must carry your student ID card as well as transaction statement (proof of payment) for on-campus registration.</li>
+        </section>
+    </footer>
+    <script>
+resizeNav();
+window.addEventListener('resize', resizeNav)
+document.getElementById('nav-toggle').addEventListener('click', toggleNav)
+document.querySelectorAll(".nav-link").forEach(el => {
+    el.addEventListener('click', toggleNav)
+})
+
+function toggleNav () {
+    document.querySelector('body').classList.toggle('navbar--open')
+    document.getElementById('nav-overlay').classList.toggle("open")
+    document.getElementById('nav-fullscreen').classList.toggle("open")
+    document.getElementById('nav-toggle').classList.toggle("open")
+}
+
+function resizeNav () {
+    let fscreen = document.getElementById('nav-fullscreen')
+    let overlay = document.getElementById('nav-overlay')
+    fscreen.style.height = "" + window.innerHeight + "px"
+    const radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+    const diameter = radius * 2;
+    overlay.style.width = "" + diameter + "px"
+    overlay.style.height = "" + diameter + "px"
+    overlay.style.marginTop = "" + -radius + "px"
+    overlay.style.marginLeft = "" + -radius + "px"
+}
+document.addEventListener('keyup', (e) => {
+    if(e.keyCode === 27) {
+        document.querySelector('body').classList.remove('navbar--open')
+        document.getElementById('nav-overlay').classList.remove("open")
+        document.getElementById('nav-fullscreen').classList.remove("open")
+        document.getElementById('nav-toggle').classList.remove("open")
+    }
+})
+            </script>
+</body>
+</html>

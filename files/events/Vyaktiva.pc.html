@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blitzschlag | Vyaktiva Srijan Events</title>
+  <meta name="description" content="Vyaktiva Srijan events, Blitzschlag 2019" />
+  <meta name="keywords" content="Blitzschlag MNIT Events" />
+  <meta name="author" content="Saksham Jain"/>
+    <link rel="stylesheet" href="../../base.css"/>
+  <link rel="stylesheet" href="../fullpage.min.css"/>
+  <link rel="stylesheet" href="./style.pc.css"/>
+  <link rel="shortcut icon" href="../src/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Cinzel" rel="stylesheet">
+  <script src="../src/vendors/jquery.min.js"></script>
+  <script src="../dist/events.pc.bundle.js"></script>
+
+</head>
+<body>
+<ul id="dots">
+    <li><a id="page1"></a></li>
+    <li><a id="page2" ></a></li>
+    <li><a id="page3"></a></li>
+    <li><a id="page4"></a></li>
+    <li><a id="page5"></a></li>
+    <li><a id="page6"></a></li>
+    <li><a id="page7"></a></li>
+    <li><a id="page8"></a></li>
+    <li><a id="page9"></a></li>
+    <li><a id="page10"></a></li>
+    <li><a id="page11"></a></li>
+</ul>
+
+<div id="modalContainer" class="modal__container">
+    <div class="modal">
+      <div class="modal__close-icon">
+        <i class="fa fa-2x fa-times modal__close"></i>
+      </div>
+      <div class="modal__head">
+        <div id="eventNameContainer" class="event__name"></div>
+      </div>
+      <div class="modal__body">
+        <div id="teamLead"></div>
+        <form id="eventRegistration" action="/register/events" method="POST" >
+
+        </form>
+       <div id="muted"></div>
+      </div>
+      <div class="modal__actions">
+        <button class="modal__action modal__close"><i class="fa fa-times"></i> Cancel</button>
+        <button id="modalSubmit" class="modal__action modal__register"><i class="fa fa-check"></i> Register</button>
+      </div>
+    </div>
+  </div>
+
+<div class="skw-pages">
+  <div class="skw-page skw-page-1 active">
+    <div class="skw-page__half skw-page__half--left">
+      <div class="skw-page__skewed">
+        <div class="skw-page__content"></div>
+      </div>
+    </div>
+    <div class="skw-page__half skw-page__half--right">
+      <div class="skw-page__skewed">
+        <div class="skw-page__content">
+          <h2 class="skw-page__heading">General Quiz <br><span class="content">Date<span></h2>
+          <p class="skw-page__description">Rules</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="skw-page skw-page-2">
+    <div class="skw-page__half skw-page__half--left">
+    <div class="skw-page__skewed">
+        <div class="skw-page__content">
+          <h2 class="skw-page__heading">Movie Quiz<br><span class="content">Date<span></h2>
+            <p class="skw-page__description">Rules</p>
+        </div>
+      </div>
+    </div>
+    <div class="skw-page__half skw-page__half--right">
+      <div class="skw-page__skewed">
+        <div class="skw-page__content"></div>
+      </div>
+    </div>
+  </div>
+  <div class="skw-page skw-page-3">
+    <div class="skw-page__half skw-page__half--left">
+      <div class="skw-page__skewed">
+        <div class="skw-page__content"></div>
+      </div>
+    </div>
+    <div class="skw-page__half skw-page__half--right">
+    <div class="skw-page__skewed">
+        <div class="skw-page__content">
+          <h2 class="skw-page__heading">Sports Quiz <br><span class="content">Date<span></h2>
+            <p class="skw-page__description">Rules</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="skw-page skw-page-4">
+        <div class="skw-page__half skw-page__half--left">
+            <div class="skw-page__skewed">
+            <div class="skw-page__content">
+                <h2 class="skw-page__heading">Workshop on Personality Developmen<br><span class="content">Date<span></h2>
+                <p class="skw-page__description">Rules</p>
+            </div>
+            </div>
+        </div>
+        <div class="skw-page__half skw-page__half--right">
+            <div class="skw-page__skewed">
+            <div class="skw-page__content"></div>
+            </div>
+        </div>
+    </div>
+    <div class="skw-page skw-page-5">
+        <div class="skw-page__half skw-page__half--left">
+            <div class="skw-page__skewed">
+            <div class="skw-page__content">
+                <h2 class="skw-page__heading">Fun & Mind Games <br><span class="content">Date<span></h2>
+                <p class="skw-page__description">Rules</p>
+            </div>
+            </div>
+        </div>
+        <div class="skw-page__half skw-page__half--right">
+            <div class="skw-page__skewed">
+            <div class="skw-page__content"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

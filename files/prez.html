@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blitzschlag Data</title>
+    <meta name="description" content="FineArts events, Blitzschlag 2019" />
+    <meta name="keywords" content="Blitzschlag MNIT Events" />
+    <meta name="author" content="Ayush Rawal"/>
+    <link rel="shortcut icon" href="../src/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Cinzel" rel="stylesheet">
+    <link rel="stylesheet" href="../base.css"/>
+    <style>
+        body {
+    --baseBackground: #183856;
+    --baseText: #efd983;
+    --white: #eaecef;
+    --black: #050b10;
+    font-family: 'Open Sans', sans-serif;
+    background: radial-gradient(circle farthest-side, var(--baseBackground), var(--black));
+    color: var(--baseText);
+}
+.row {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid var(--baseText);
+}
+
+.row__head {
+    border-top: 1px solid var(--baseText);
+    border-bottom: 1px solid var(--baseText);
+    padding: 0.3em;
+}
+
+.row__cards {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+ input,  button {
+    flex: 1;
+    margin: 1.2em;
+}
+.soc__card {
+    margin: 0.2em;
+}
+    </style>
+</head>
+<body>
+    <main>
+        <form>
+            <label>Blitz ID <input id="blitzID" type="number" required/></label>
+            <button id="getData" type="submit">Get Data</button>
+        </form>
+        <a href="https://team.blitzschlag.org/find">Forgot Blitz ID?</a>
+        <div id="content">
+        </div>
+    </main>
+    <script>
+        let content = document.getElementById('content')
+        document.getElementById('getData').addEventListener('click', function (e) {
+            e.preventDefault()
+            let content = document.getElementById('content')
+            content.innerHTML = "fetching data"
+            fetch('/', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    blitzID: document.getElementById('blitzID').value
+                })
+            })
+            .then(res => res.json())
+            .then(res => {
+                content.innerHTML = ""
+                const data = res.data
+                content.appendChild(createCard(data))
+                content.appendChild(createRow({name: "Events", value: data.events}))
+                content.appendChild(createRow({name: "Workshops", value: data.workshops}))
+            })
+        })
+        function createRow ({name, value}) {
+            let wrap = document.createElement('div')
+            wrap.classList.add('row')
+            let heading = createWrappedText('h2', name)
+            heading.classList.add('row__head')
+            wrap.appendChild(heading)
+            let cardContainer = document.createElement('div')
+            cardContainer.classList.add('row__cards')
+            Object.keys(value).forEach(soc => {
+                cardContainer.appendChild(createSocietyCard(soc, value[soc]))
+            })
+            wrap.appendChild(cardContainer)
+            return wrap
+        }
+
+        function createSocietyCard(soc, events) {
+            let wrap = document.createElement('div')
+            if(!events.length) {
+                return wrap
+            }
+            wrap.classList.add("soc__card")
+            let heading = createWrappedText("h3", soc)
+            let list = document.createElement('ul')
+            list.classList.add("soc__list")
+            events.forEach(_event => {
+                if(!_event.teamName) {
+                    list.appendChild(createWrappedText("li", _event.name))
+                } else {
+                    let _ = document.createElement("div")
+                    _.appendChild(createWrappedText("p", _event.name))
+                    _.appendChild(createWrappedText("p", `Team: ${_event.teamName}`))
+                    _.appendChild(createWrappedText("p", `Team Size: ${_event.teamSize}`))
+                    list.appendChild(_)
+                }
+            })
+            wrap.appendChild(heading)
+            wrap.appendChild(list)
+            return wrap
+        }
+
+        function createCard(item) {
+            let card = document.createElement('div')
+            card.classList.add('card')
+            let name = createWrappedText('p', item.firstName + ' ' + item.lastName)
+            name.classList.add('card__name')
+            let email = createWrappedText('p', item.email)
+            email.classList.add('card__email')
+            let mob = createWrappedText('p', item.mob)
+            mob.classList.add('card__mob')
+            let blitzID = createWrappedText('p', `blitz@${item.blitzID}`)
+            blitzID.classList.add('card__blitzID')
+            let blitzPIN = createWrappedText('p', `PIN: ${item.blitzPIN}`)
+            blitzPIN.classList.add('card__blitzPIN')
+            let isMNIT = createWrappedText('p', `is MNIT: ${item.isMNIT}`)
+            isMNIT.classList.add('card__isMNIT')
+            let accomodation = createWrappedText('p', `Needs accomodation: ${item.accomodation}`)
+            accomodation.classList.add('card__accomodation')
+            card.appendChild(name)
+            card.appendChild(email)
+            card.appendChild(mob)
+            card.appendChild(blitzID)
+            card.appendChild(blitzPIN)
+            card.appendChild(isMNIT)
+            card.appendChild(accomodation)
+            return card
+        }
+
+        function createWrappedText(elem, txt) {
+            let wrap = document.createElement(elem)
+            wrap.appendChild(document.createTextNode(txt))
+            return wrap
+        }
+    </script>
+</body>
+</html>

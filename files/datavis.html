@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Team</title>
+    <style>
+    
+body {
+    --baseBackground: #183856;
+    --baseText: #efd983;
+    --white: #eaecef;
+    --black: #050b10;
+    font-family: 'Open Sans', sans-serif;
+    background: radial-gradient(circle farthest-side, var(--baseBackground), var(--black));
+    color: var(--baseText);
+}
+.row {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid var(--baseText);
+}
+
+.row__cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#barchart {
+  width: 1000px;
+  height: 600px;
+  margin: auto;
+  background-color: #183856;
+  text-align: center;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bar {
+  fill: #efd983;
+}
+
+text {
+  font-size: 12px;
+  fill: #fff;
+}
+
+path {
+  stroke: gray;
+}
+
+line {
+  stroke: gray;
+}
+
+line#limit {
+  stroke: #FED966;
+  stroke-width: 3;
+  stroke-dasharray: 3 6;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+.grid .tick line {
+  stroke: #9FAAAE;
+  stroke-opacity: 0.3;
+}
+
+text.divergence {
+  font-size: 14px;
+  fill: #2F4A6D;
+}
+
+text.value {
+  font-size: 14px;
+}
+
+text.title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+text.label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+text.source {
+  font-size: 10px;
+}
+
+.no-display {
+    display: none;
+}
+
+@media screen and (max-width: 30em) {
+    #barchart {
+        display: none;
+    }
+}
+
+</style>
+</head>
+<body>
+    <main>
+        <div id="options" class="options">
+            <label>
+                Which events?
+                <select>
+                    <option value="Literary">Literary</option>
+                    <option value="Dramatics">Dramatics</option>
+                    <option value="MusicAndSpicMacay">Music And Spic Macay</option>
+                    <option value="FineArts">Fine Arts</option>
+                    <option value="FilmAndPhotography">Film And Photography</option>
+                    <option value="EDcell">EDcell</option>
+                    <option value="Panache">Panache</option>
+                </select>
+            </label>
+            <button id="seeStats">See stats!</button>
+        </div>
+        <div id="loader" class="no-display">
+            <img src="./src/images/tail-spin.svg"/>
+            <p>Fetching data..</p>
+        </div>
+        <div id="error" class="no-display" ><p>There was an error getting the data, try again</p></div>
+        <div id="barchart" class="no-display">
+            <svg></svg>
+        </div>
+        <div id="content"></div>
+    </main>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="./dist/datavis.bundle.js"></script>
+</body>
+</html>

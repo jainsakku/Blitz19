@@ -1,0 +1,327 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.skw-pages {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.skw-page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.skw-page__half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+.skw-page__half--left {
+  left: 0;
+  -webkit-transform: translate3d(-32.4vh, 100%, 0);
+          transform: translate3d(-32.4vh, 100%, 0);
+}
+.skw-page__half--right {
+  left: 50%;
+  -webkit-transform: translate3d(32.4vh, -100%, 0);
+          transform: translate3d(32.4vh, -100%, 0);
+}
+.skw-page.active .skw-page__half {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.skw-page__skewed {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 140%;
+  height: 100%;
+  -webkit-transform: skewX(-18deg);
+          transform: skewX(-18deg);
+  background: var(--baseBackground);
+}
+.skw-page__half--left .skw-page__skewed {
+  left: -40%;
+}
+.skw-page__half--right .skw-page__skewed {
+  right: -40%;
+}
+.skw-page__content {
+  display: flex;
+  /* align-content: center; */
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 30%;
+  color: var(--colorText);
+  -webkit-transform: skewX(18deg);
+          transform: skewX(18deg);
+  transition: opacity 1s, -webkit-transform 1s;
+  transition: transform 1s, opacity 2s;
+  transition: transform 1s, opacity 2s, -webkit-transform 1s;
+  background-size: cover;
+}
+
+.skw-page__content img {
+  max-height: 100%;
+}
+
+.skw-page__half--left .skw-page__content {
+  padding-left: 25%;
+  padding-right: 25%;
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+}
+.skw-page__half--right .skw-page__content {
+  padding-left: 17%;
+  padding-right: 23%;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+.skw-page.inactive .skw-page__content {
+  opacity: 0.5;
+  -webkit-transform: skewX(18deg) scale(0.95);
+          transform: skewX(18deg) scale(0.95);
+}
+.skw-page__heading {
+  margin-bottom: 4vh;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 2em;
+}
+.skw-page__description {
+  text-align: justify;
+  text-align-last: center;
+}
+.content{
+	font-size:35px;
+	line-height: 1em;
+}
+
+.registration__button, .rules__button  {
+  height: 3em;
+  border-radius: 3em;
+  width: 11em;
+  margin: 1em;
+}
+.registration__button, .registration__button--closed {
+  background: var(--colorTextHighlight);
+  color: var(--baseBackground);
+  border: 1px solid var(--baseBackground);
+}
+
+.rules__button {
+  background: var(--baseBackground);
+  color: var(--colorTextHighlight);
+  border: 1px solid var(--colorTextHighlight  );
+}
+
+.skw-page__link {
+  color: #FFA0A0;
+}
+
+#dots {
+  position: fixed;
+  top: 50%;
+  z-index:1;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 30px;
+  list-style: none;
+}
+#dots li {
+  position: relative;
+  margin: 20px 0;
+  background: var(--colorText);
+  border-radius: 100%;
+  width: 8px;
+  height: 8px;
+  transition: all .2s ease;
+}
+#dots li:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+#dots a {
+  position: absolute;
+  text-decoration: none;
+  left: 0;
+  top: 0;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+body.page-1 #dots li:nth-of-type(1), body.page-2 #dots li:nth-of-type(2), body.page-3 #dots li:nth-of-type(3), body.page-4 #dots li:nth-of-type(4), body.page-5 #dots li:nth-of-type(5),body.page-6 #dots li:nth-of-type(6),body.page-7 #dots li:nth-of-type(7),body.page-8 #dots li:nth-of-type(8) {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.modal__container {
+  display: none;
+}
+
+.modal__container.active {
+  display: flex;
+  width:100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.modal {
+  height: 50%;
+  background: var(--baseBackground);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 4px solid currentColor;
+  border-radius: 1em;
+  z-index: 999;
+}
+
+.modal__head {
+  flex: 1.5;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3em;
+}
+
+.modal__close-icon {
+  position: absolute;
+  left: 87%;
+  bottom: 85%;
+  cursor: pointer;
+}
+
+.modal__body {
+  flex: 6;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrong {
+  border: 2px solid red;
+}
+
+.submitting-modal .modal__actions, .submitting-modal #teamLead {
+  visibility: hidden;
+}
+
+.modal__actions {
+  flex: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1em;
+}
+
+.modal__action {
+  display: inline-block;
+	line-height: 1.2em;
+	margin: 1.5em;
+	padding: 0.7rem 2rem;
+	border-radius: 2em;
+	width: auto;
+	text-align: center;
+	border: 1px solid var(--colorText);
+}
+
+.modal__register {
+	background: var(--colorText);
+	color: var(--baseBackground);
+}
+
+.modal__close {
+	color: var(--colorText);
+	background: var(--baseBackground);
+}
+
+.muted {
+  color: var(--colorTextMuted)
+}
+
+.pdf-modal .modal__actions {
+  display: none;
+}
+
+#eventRegistration {
+  flex: 4;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#eventRegistration label {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#eventNameContainer {
+  font-size: 70%;
+}
+
+label p, label input {
+  flex: 1;
+  margin: 0.15em .4em;
+}
+
+body[data-overflow-hidden] {
+  overflow: hidden;
+}
+
+.blur-back {
+  filter: opacity(40%) blur(5px)
+}
+
+#pdfContainer, #teamLead, #eventRegistration {
+  display: none;
+}
+
+.modal__pdf #pdfContainer {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.modal__form #teamLead, .modal__form #eventRegistration {
+  display: flex;
+}
+
+.modal__pdf .modal {
+  height: 80%;
+  width: 80%;
+}
+
+.modal__pdf .modal__body {
+  width: 100%;
+}

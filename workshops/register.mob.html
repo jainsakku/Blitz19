@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blitzschlag | Event Registration</title>
+    <meta name="description" content="Event Registration, Blitzschlag 2019" />
+    <meta name="keywords" content="Blitzschlag MNIT Events" />
+    <meta name="author" content="Saksham Jain"/>
+    <link rel="shortcut icon" href="../src/images/favicon.ico">
+    <link rel="stylesheet" href="../base.css"/>
+    <link rel="stylesheet" href="../files/fullpage.min.css"/>
+    <link rel="stylesheet" href="../files/events/style.mob.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Cinzel" rel="stylesheet">
+    <style>
+        body {
+            background: radial-gradient(circle farthest-side, #183856, #050b10);
+            box-sizing: border-box;
+            color: rgba(239, 217, 131, 0.87);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        main {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center
+        }
+        img {
+            max-width: 100%;
+            transform: scale(0.7);
+            margin: -25%;
+            filter: saturate(2.6);
+        }
+        .img__container {
+            flex: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form__container {
+            flex: 7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column nowrap;
+            width: 40%;
+            /* margin-top: 1em; */
+        }
+        form label {
+            flex: 1;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        form label p {
+            flex: 1;
+        }
+        form label input {
+            flex: 1;
+            border-radius: 3em;
+            height: 2em;
+        }
+        .actions {
+            flex: 1;
+            display: flex;
+            flex-flow: row nowrap;
+            margin: 1em;
+        }
+        button {
+            padding: 1em 3em;
+            border-radius: 3em;
+            color: #183856;
+            background: rgba(239, 217, 131, 0.87);
+            border: 1px solid #183856;
+            margin: 0 1em;
+        }
+        h1 {
+            font-family: 'satsify', cursive
+        }
+        .no-display {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <aside id="nav-container">
+        <div id="nav-overlay"></div>
+        <nav id="nav-fullscreen" role="navigation">
+            <ul>
+                <li><a class="nav-link" href="/#home">Home</a></li>
+                <li><a class="nav-link" href="/#events">Events</a></li>
+                <!-- <li><a class="nav-link" href="/timeline">Timeline</a></li> -->
+					<li><a class="nav-link" href="/celeb">Pronites</a></li>
+                <li><a class="nav-link" href="/Flagships">Flagship Events</a></li>
+                <li><a class="nav-link" href="/#registration">Register</a></li>
+                <li><a class="nav-link" href="/payment">Hospitality</a></li>
+                <li><a class="nav-link" target="_blank" href="https://myimaginestore.com/university/">Imagine Lucky Draw</a></li>
+                <li><a class="nav-link" href="/#contact">Contact Us</a></li>
+                <li><a class="nav-link" href="/team">Our Team</a></li>
+            </ul>
+        </nav>
+
+        <a id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </aside>
+    <main>
+        <div class="img__container">
+            <img src="../src/images/Font.png" alt="Blitzschlag Logo"/>
+        </div>
+        <div class="form__container" >
+            <h1>Event Registration</h1>
+            <h2 id="title"></h2>
+            <form id="form" action="/register/workshops" method="POST">
+                <label><p>Blitzschlag ID</p><input placeholder="blitz@1234" required ></label>
+                <label><p>PIN</p><input placeholder="****" required maxlength="4" type="password"></label>
+                <label class="no-display"><p>Team Name</p> <input name="teamName" type="text"/></label>
+                <label class="no-display"><p>Team Size</p> <input name="teamSize" pattern="[1-9]\d*" type="number"/></label>
+            </form>
+            <div class="actions">
+                <button id="cancel" type="button" >Cancel</button>
+                <button id="register" type="button" >Register</button>
+            </div>
+            <p class="no-display" >Member Registrations will be done on spot</p>
+        </div>
+    </main>
+    <script>
+resizeNav();
+window.addEventListener('resize', resizeNav)
+document.getElementById('nav-toggle').addEventListener('click', toggleNav)
+document.querySelectorAll(".nav-link").forEach(el => {
+    el.addEventListener('click', toggleNav)
+})
+
+function toggleNav () {
+    document.getElementById('nav-overlay').classList.toggle("open")
+    document.getElementById('nav-fullscreen').classList.toggle("open")
+    document.getElementById('nav-toggle').classList.toggle("open")
+}
+
+function resizeNav () {
+    let fscreen = document.getElementById('nav-fullscreen')
+    let overlay = document.getElementById('nav-overlay')
+    fscreen.style.height = "" + window.innerHeight + "px"
+    const radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+    const diameter = radius * 2;
+    overlay.style.width = "" + diameter + "px"
+    overlay.style.height = "" + diameter + "px"
+    overlay.style.marginTop = "" + -radius + "px"
+    overlay.style.marginLeft = "" + -radius + "px"
+}
+
+document.addEventListener('keyup', (e) => {
+    if(e.keyCode === 27) {
+        document.getElementById('nav-overlay').classList.remove("open")
+        document.getElementById('nav-fullscreen').classList.remove("open")
+        document.getElementById('nav-toggle').classList.remove("open")
+    }
+})
+</script>
+<script>
+        document.getElementById('cancel').addEventListener('click', function () {
+            window.history.back()
+        })
+        const data = window.location.href.split('#')[1].split('/')
+        const society = data[1].split('%20').join('')
+        const name = data[2]
+
+        document.getElementById('register').addEventListener('click', function () {
+            let form = document.getElementById('form')
+            console.log(form)
+            if (form.reportValidity() && form[0].value.match(/blitz@\d{4,}/im)) {
+                let blitzID = form[0].value
+                let blitzPIN = form[1].value
+                let eventName = name.split("%20").join('')
+                let teamName = form[2].value
+                let teamSize = form[3].value
+                const body = {
+                    blitzID,
+                    blitzPIN,
+                    _event: eventName,
+                    society,
+                    teamName,
+                    teamSize
+                }
+                console.log(body)
+                fetch('/register/workshops', {
+                    method: "POST",
+                    headers: {
+                    "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(body)
+                })
+                .then(res => {
+                    if(!res.ok) {
+                    document.querySelector('.form__container').innerHTML = `<h2>There was an error in registration</h2><h3>${res.data.err}</h3>`
+                    } else {
+                        document.querySelector('.form__container').innerHTML = "<h2>Registration successful</h2>"
+                    }
+                })
+            }
+        })
+
+        document.getElementById('title').appendChild(document.createTextNode(name.split('%20').join(' ')))
+        // const isTeam = window.localStorage.getItem("events")[society][name.split('%20').join('')].isTeam
+
+        // if (isTeam) {
+        //     document.querySelectorAll('.no-display').forEach(el => el.classList.remove('no-display'))
+        // }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+{
+  "Literary": {
+    "PenItDown": {
+      "isTeam": false
+    },
+    "VersesVsVerses":
+    {
+      "isTeam":false
+    },
+    "JustAMinute":
+    {
+      "isTeam":false
+    },
+    "Puzzleria":
+    {
+      "isTeam":true
+    },
+    "Litwit":
+    {
+      "isTeam":true
+    },
+    "Kaavyanjali":
+    {
+      "isTeam":false
+    },
+    "Bhaavankur":{
+      "isTeam":false
+    }
+  },
+  "Dramatics":{
+    "Tamasha":
+    {
+      "isTeam":true
+    },
+    "Rangbhoomi":
+    {
+      "isTeam":true
+    },
+    "Advitiya":
+    {
+      "isTeam":true
+    },
+    "Spoof":
+    {
+      "isTeam":true
+    }
+  },
+  "MusicAndSpicMacay":{
+    "Breakfree":{
+      "isTeam":true
+    },
+    "RambaSamba":{
+      "isTeam":true
+    },
+    "Dhun":{
+      "isTeam":false
+    },
+    "HitTheStreet":{
+      "isTeam":true
+    },
+    "Nrityanjali":{
+      "isTeam":false
+    },
+    "TheVoiceChoice":{
+      "isTeam":false
+    },
+    "CelebNight": {
+      "isTeam": false
+    },
+    "BattleOfBands": {
+      "isTeam": false
+    },
+    "EDMNight": {
+      "isTeam": false
+    }
+  },
+  "FineArts":{
+    "ClayMiti":{
+      "isTeam":true
+    },
+    "Contrasto":{
+      "isTeam":true
+    },
+    "SkyWar":{
+      "isTeam":true
+    },
+    "TreasureHunt":{
+      "isTeam":true
+    },
+    "SymphonyOfColours":{
+      "isTeam":true
+    },
+    "DesignMe":{
+      "isTeam":true
+    },
+    "Trashion":{
+      "isTeam":true
+    },
+    "DribbleTheMarble":{
+      "isTeam":true
+    },
+    "RibbionArt":{
+      "isTeam":true
+    },
+    "HouseIt":{
+      "isTeam":true
+    },
+    "Panache": {
+      "isTeam": true
+    }
+  },
+  "FilmAndPhotography":{
+    "VineOMania":{
+      "isTeam":true
+    },
+    "ShortFilmMaking":{
+      "isTeam":true
+    },
+    "SelfieContest":{
+      "isTeam":true
+    },
+    "Moments":{
+      "isTeam":false
+    },
+    "Animate":{
+      "isTeam":false
+    },
+    "BlitzMoments":
+    {
+      "isTeam":false
+    }, "MobileDSLR": {
+      "isTeam": false
+    }
+  },
+  "EDcell": {
+    "Aspire": {
+      "isTeam": true
+    },
+    "StartupNivesh": {
+      "isTeam": true
+    }
+  }
+}

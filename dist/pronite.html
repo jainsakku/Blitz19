@@ -1,0 +1,31 @@
+<!doctype html> <html lang=en class=no-js> <head> <meta charset=UTF-8> <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=yes"> <meta http-equiv=X-UA-Compatible content="ie=edge"> <meta name=author content="Saksham Jain"/> <meta name=description content="Blitzschlag 2019 - The cultural fest of Malaviya National Institute of Technology"/> <meta name=keywords content="Blitzschlag,MNIT,Jaipur,cultural,fest,Saksham Jain,Saksham,Jain,event,events,2019,2k19"/> <meta name=Resource-type content=Document /> <meta name=theme-color content=#183856> <meta name=msapplication-navbutton-color content=#183856> <meta name=apple-mobile-web-app-status-bar-style content=#183856> <title>Blitzschlag 2K19 | Flagship Events</title> <link href="https://fonts.googleapis.com/css?family=Roboto|Cinzel" rel=stylesheet> <link rel=stylesheet href=/dist/css/base.css /> <link rel=stylesheet href=/dist/css/fullpage.min.css /> <link rel=stylesheet href=/dist/css/pronite.css /> <link rel="shortcut icon" href=data:image/vnd.microsoft.icon;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADl0lEQVRYhe2WS2zUVRTGv3Punen038lYRxlrW1vB2mAxPARijSYSFHlZTZQFFMSycOHOrZq4cqHGxJUbTch0isYYXWAfgwZiMKZQ+lCIJiBEalsqmlKHsTP8O/O/57jRxAdtp62PxPS3Pvf7vtx7zskFllhiif8YWszh3sMHORyyjUTkf3Xu4vDTz700bw1eTICQNXzph4mz/nRh5K476xelVRID6Y66gZ5UfK66/p5UYjDdUf23mg8dOdTQ15n8g/mzbXvQ15mM9XUlo3+u7+tKVn/x8Tt1c+mW1AOnuttjhrlKVTPOSebelrbCYLqjCUBl4Nw3RBS2xqxQ1fH125/6tq8rGTHMMRDFoTqyYcf+/EzatpQAzolPRFNMxETE/T2pmKr6AE0xcxSAVdW8qhb6e1KeqjKIWEUyIhos+gYAoPa2egDA4bdejouIZwzHikWXJSJLRKyqbK2BcxKwocnHnnkxe2l0ZE7dkgP0d7dzOBTawUx+4GTIn57OiAgzM3vlEU9Eq5kpu2ZL69hvZ7Y/9CDSx44vPMCXn7zrGabniejTqdy1Xq88shmAiEivMWaXQo8CeIBAU4VisStk7W4QsgRI4OSCNSYGoM6JnFz7SOv49TxmnV3DBBBFQGSJKWAmBmDXbt2bBWECCiHgZhBW+tMFISKPgAgRgYhqAdSCYJlow4weswU4fW6kuHNT8yiACsumphgE/W+mPjzz9msveIa5UqErFLgA4LOwtTXOuYHAyUXDplpEctlc/lg4ZO3E5NXjqQ+6r+sx71U8mO6IO5FwyBhbdM4nEIjAogprTDhwLrDG5O/Zti/7a/1KVZ1SxfjGnftlQQFOfHTQWmMTzCSBk4xhjhIhoQBDNa+AZaIIAF9VJ1ThE1NMRSQQmbyv5cCMo1jS/jZsoswUVVWpuuPuxvrV9zcBCBMQcyJZFc2AEAeA5es2NccStdVQFSKuDBkTmU275CcYOnKosVgMMqs3P/lqWXlF6/S13Ht+7ufOK99/d5mZOX7r7bVlXsXjZRFvVz770+tff975RjgUCq/bunfWZTBrE/4ez4teWbOq4ZaJkfNHb1hWMwY2TSZcvuXGRM3uisplD5tQ2UaoFvzc1VfOnki/z8y0ftu+0bl0F/wfONmZ9BLLV1XFbqqqA1QmL48OT46d/7G5pc2fj86iPiSnutotMzUQUaEYBMPNLQf+0uX/OHueePRf91xiif8XvwAxkXsshZOuUAAAAABJRU5ErkJggg==> </head> <body> <aside id=nav-container> <div id=nav-overlay></div> <nav id=nav-fullscreen role=navigation> <ul> <li><a class=nav-link href=/#home>Home</a></li> <li><a class=nav-link href=/#events>Events</a></li> <li><a class=nav-link href=/celeb>Pronites</a></li> <li><a class=nav-link href=/Flagships>Flagship Events</a></li> <li><a class=nav-link href=/workshops>EISYSTEMS Workshop</a></li> <li><a class=nav-link href=/#registration>Register</a></li> <li><a class=nav-link href=/payment>Hospitality</a></li> <li><a class=nav-link target=_blank href=https://myimaginestore.com/university/ >Imagine Lucky Draw</a></li> <li><a class=nav-link href=/#contact>Contact Us</a></li> <li><a class=nav-link href=/team>Our Team</a></li> </ul> </nav> <a id=nav-toggle> <span></span> <span></span> <span></span> </a> </aside> <main id=content> <div class=section> <article class=slide> <section class=event__container id=panache> <h2 class=flagship__heading>Panache</h2> <a href=/events/FineArts class=register>Register</a> </section> </article> <article class=slide id=rambaSamba> <section class=event__container> <h2 class=flagship__heading>Ramba-Samba</h2> <a href=/events/Music class=register>Register</a> </section> </article> <article class=slide> <section class=event__container id=bob> <h2 class=flagship__heading>Battle of Bands</h2> <a href=/events/Music class=register>Register</a> </section> </article> </div> </main> <script> resizeNav();
+window.addEventListener('resize', resizeNav)
+document.getElementById('nav-toggle').addEventListener('click', toggleNav)
+document.querySelectorAll(".nav-link").forEach(el => {
+    el.addEventListener('click', toggleNav)
+})
+
+function toggleNav () {
+    document.getElementById('nav-overlay').classList.toggle("open")
+    document.getElementById('nav-fullscreen').classList.toggle("open")
+    document.getElementById('nav-toggle').classList.toggle("open")
+}
+
+function resizeNav () {
+    let fscreen = document.getElementById('nav-fullscreen')
+    let overlay = document.getElementById('nav-overlay')
+    fscreen.style.height = "" + window.innerHeight + "px"
+    const radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+    const diameter = radius * 2;
+    overlay.style.width = "" + diameter + "px"
+    overlay.style.height = "" + diameter + "px"
+    overlay.style.marginTop = "" + -radius + "px"
+    overlay.style.marginLeft = "" + -radius + "px"
+}
+document.addEventListener('keyup', (e) => {
+    if(e.keyCode === 27) {
+        document.getElementById('nav-overlay').classList.remove("open")
+        document.getElementById('nav-fullscreen').classList.remove("open")
+        document.getElementById('nav-toggle').classList.remove("open")
+    }
+}) </script> <script src=./dist/pronite.bundle.js></script> </body> </html> 

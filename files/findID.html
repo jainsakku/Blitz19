@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blitzschlag | Find ID</title>
+    <meta name="description" content="FineArts events, Blitzschlag 2019" />
+    <meta name="keywords" content="Blitzschlag MNIT Events" />
+    <meta name="author" content="Saksham Jain"/>
+    <link rel="shortcut icon" href="../src/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Cinzel" rel="stylesheet">
+    <link rel="stylesheet" href="./base.css"/>
+    <style>
+    body {
+    --baseBackground: #183856;
+    --baseText: #efd983;
+    --white: #eaecef;
+    --black: #050b10;
+    font-family: 'Open Sans', sans-serif;
+    background: radial-gradient(circle farthest-side, var(--baseBackground), var(--black));
+    color: var(--baseText);
+}
+.row {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid var(--baseText);
+}
+
+.row__cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#form input, #form button {
+    flex: 1;
+    margin: 1.2em;
+}
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <form id="form">
+            <label> First Name <input name="firstName" type="text"></label>
+            <label> Last Name<input name="lastName" type="text"></label>
+            <label> College ID<input name="collegeID" type="text"></label>
+            <button id="submit" type="submit">Find ID</button>
+        </form>
+        <p id="result"></p>
+    </main>
+    <script>
+    document.getElementById('submit').addEventListener('click', function(e) {
+            let result = document.getElementById('result')
+        e.preventDefault()
+        let form = document.getElementById('form')
+        let firstName = form[0].value
+        let lastName = form[1].value
+        let collegeID = form[2].value
+        let body = {
+            firstName,
+            lastName,
+            collegeID
+        }
+        result.innerHTML = "Fetching Data..."
+        fetch('/find', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        })
+        .then(res => res.json())
+        .then(res => {
+            result.innerHTML = ""
+            if(!res.ok) {
+                result.appendChild(createWrappedText('p', `Error getting data ${res.data.err}`))                
+            } else {
+
+                let data = res.data
+
+                result.appendChild(createRow(data.result))
+                function createRow (value) {
+                    let wrap = document.createElement('div')
+                    wrap.classList.add('row')
+                    let heading = createWrappedText('h2', 'Results')
+                    heading.classList.add('row__head')
+                    wrap.appendChild(heading)
+                    let cardContainer = document.createElement('div')
+                    cardContainer.classList.add('row__cards')
+                    value.forEach(el => {
+                        cardContainer.appendChild(createCard(el))
+                    })
+                    wrap.appendChild(cardContainer)
+                    return wrap
+                }
+
+                function createCard(item) {
+                    let card = document.createElement('div')
+                    card.classList.add('card')
+                    let blitzID = createWrappedText('p', `blitz@${item.blitzID}`)
+                    blitzID.classList.add('card__blitzID')
+                    card.appendChild(blitzID)
+                    let firstName = createWrappedText('p', `Name: ${item.firstName} ${item.lastName}`)
+                    card.appendChild(firstName)
+                   let collegeID = createWrappedText('p', `college ID: ${item.collegeID}`)
+                    card.appendChild(collegeID)
+                    return card
+                }
+                function createWrappedText(elem, txt) {
+                    let wrap = document.createElement(elem)
+                    wrap.appendChild(document.createTextNode(txt))
+                    return wrap
+                }
+
+            }
+        })
+        // console.log(document.querySelector('input[name="lastName]').value)
+        // console.log(document.querySelector('input[name="collegeID"]').value)
+
+    })
+    </script>
+</body>
+</html>

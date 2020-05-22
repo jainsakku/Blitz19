@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blitzschlag | Dramatics Events</title>
+    <meta name="description" content="Literary Society events, Blitzschlag 2019" />
+    <meta name="keywords" content="Blitzschlag MNIT Events" />
+    <meta name="author" content="Saksham Jain"/>
+    <link rel="shortcut icon" href="../src/images/favicon.ico">
+    <link rel="stylesheet" href="../../base.css"/>
+    <link rel="stylesheet" href="../fullpage.min.css"/>
+    <link rel="stylesheet" href="./style.mob.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Cinzel" rel="stylesheet">
+</head>
+<body>
+        <aside id="nav-container">
+                <div id="nav-overlay"></div>
+                <nav id="nav-fullscreen" role="navigation">
+                    <ul>
+                        <li><a class="nav-link" href="/#home">Home</a></li>
+                        <li><a class="nav-link" href="/#events">Events</a></li>
+                        <!-- <li><a class="nav-link" href="/timeline">Timeline</a></li> -->
+                        <li><a class="nav-link" href="/celeb">Pronites</a></li>
+                        <li><a class="nav-link" href="/Flagships">Flagship Events</a></li>
+                                        <li><a class="nav-link" href="/workshops">EISYSTEMS Workshop</a></li>
+
+                        <li><a class="nav-link" href="/#registration">Register</a></li>
+                <li><a class="nav-link" href="/payment">Hospitality</a></li>
+                <li><a class="nav-link" target="_blank" href="https://myimaginestore.com/university/">Imagine Lucky Draw</a></li>
+                <li><a class="nav-link" href="/#contact">Contact Us</a></li>
+                        <li><a class="nav-link" href="/team">Our Team</a></li>
+                    </ul>
+                </nav>
+
+                <a id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </aside>
+
+  <div id="content" class="main">
+    <div class="section">
+        <div class="event">
+            <div class="event__image"><img src="../src/images/tamasha.jpg" alt="\"/>
+            </div>
+            <div class="event__content">
+                <h1>
+                    TAMASHA
+                </h1>
+
+                <p class="event__description">
+                    Nukkads or Street Plays have been portraying our society and creating mass awareness about its various problems for a long time. 'TAMASHA' provides an opportunity to both actors and audience to witness this powerful form of art filled with eye catchy and highly energetic acts.
+                </p>
+                <div class="event__actions">
+                    <a href="/pdf/Tamasha" class="event__action event__action--rules">Rules</a>
+                    <a href="/events/registert/#/Dramatics/Tamasha" class="event__action event__action--register">Register</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="event">
+            <div class="event__image">
+            <img src="../src/images/rangbhoomi.jpg" alt="\"/></div>
+            <div class="event__content">
+                <h1>
+                    RANGBHOOMI
+                </h1>
+
+                <p class="event__description">
+                    Art, acting and performance are an expression of life - our culture, our worries, our love, our strength, our weaknesses, and our existential curiosity. Drama is the best way to give away your message to society. Are you good at the same art? RANGBHOOMI is providing a chance for you to live a life which is created by the director, performed by the actor and loved by the audience.
+                </p>
+                <div class="event__actions">
+                    <a href="/pdf/Rangbhoomi" class="event__action event__action--rules">Rules</a>
+                    <a href="/events/registert/#/Dramatics/Rangbhoomi" class="event__action event__action--register">Register</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="section">
+        <div class="event">
+            <div class="event__image">
+            <img src="../src/images/adivitya.jpg" alt="\"/></div>
+            <div class="event__content">
+                <h1>
+                    ADVITIYA
+                </h1>
+
+                <p class="event__description">
+                    Imagine an actor-less world. There would be no nighttime TV show to get us through a long working day. No topic for catch-ups with friends and empty nights filled with boredom and stares at a useless tv screen. Mono Acting is an art which deals with very delicate emotion. It is not putting up the mask but exposing your talent. So expose yourself with your story, just begin it, end it and tell everything in between through ADIVITIYA - The Mono Act Competition
+
+              </p>
+                <div class="event__actions">
+                    <a href="/pdf/Advitiya" class="event__action event__action--rules">Rules</a>
+                    <a href="/events/registert/#/Dramatics/Advitiya" class="event__action event__action--register">Register</a>
+
+                </div>
+            </div>
+        </div>
+	</div>
+	<div class="section">
+        <div class="event">
+            <div class="event__image">
+                <img src="../src/images/spoof.jpg" alt="\"/>
+            </div>
+            <div class="event__content">
+                <h1>
+                   SPOOF
+
+                </h1>
+
+                <p class="event__description">
+                    Have you ever thought while watching a movie, "If I got a chance, I'll give a fantastic end to the story"? So the Spoof is providing you a chance to "SPOOFify" a movie scene and write down your perfect depiction of the scene with your favorite characters and humor.
+                    So, what are you waiting for? Come and give way to your wings to get exciting prizes this Blitzschlag.
+               </p>
+                <div class="event__actions">
+                    <a href="/pdf/Spoof" class="event__action event__action--rules">Rules</a>
+                    <a href="/events/registert/#/Dramatics/Spoof" class="event__action event__action--register">Register</a>
+
+                </div>
+            </div>
+        </div>
+	</div>
+    </div>
+    <script>
+    resizeNav();
+window.addEventListener('resize', resizeNav)
+document.getElementById('nav-toggle').addEventListener('click', toggleNav)
+document.querySelectorAll(".nav-link").forEach(el => {
+    el.addEventListener('click', toggleNav)
+})
+
+function toggleNav () {
+    document.getElementById('nav-overlay').classList.toggle("open")
+    document.getElementById('nav-fullscreen').classList.toggle("open")
+    document.getElementById('nav-toggle').classList.toggle("open")
+}
+
+function resizeNav () {
+    let fscreen = document.getElementById('nav-fullscreen')
+    let overlay = document.getElementById('nav-overlay')
+    fscreen.style.height = "" + window.innerHeight + "px"
+    const radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+    const diameter = radius * 2;
+    overlay.style.width = "" + diameter + "px"
+    overlay.style.height = "" + diameter + "px"
+    overlay.style.marginTop = "" + -radius + "px"
+    overlay.style.marginLeft = "" + -radius + "px"
+}
+document.addEventListener('keyup', (e) => {
+    if(e.keyCode === 27) {
+        document.getElementById('nav-overlay').classList.remove("open")
+        document.getElementById('nav-fullscreen').classList.remove("open")
+        document.getElementById('nav-toggle').classList.remove("open")
+    }
+})
+
+</script>
+
+  <script src="../dist/events.mob.bundle.js"></script>
+
+</body>
+</html>

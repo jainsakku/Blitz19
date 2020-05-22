@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blitzschlag | Fine Arts Workshops</title>
+  <meta name="description" content="Fine Arts Society workshops, Blitzschlag 2019" />
+  <meta name="keywords" content="Blitzschlag MNIT Events" />
+  <meta name="author" content="Saksham Jain"/>
+  <link rel="shortcut icon" href="../src/images/favicon.ico">
+  <link rel="stylesheet" href="../base.css"/>
+  <link rel="stylesheet" href="../files/fullpage.min.css"/>
+  <link rel="stylesheet" href="../files/events/style.pc.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Cinzel" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script></head>
+<body>
+    <aside id="nav-container">
+        <div id="nav-overlay"></div>
+        <nav id="nav-fullscreen" role="navigation">
+            <ul>
+                <li><a class="nav-link" href="/#home">Home</a></li>
+                <li><a class="nav-link" href="/#events">Events</a></li>
+                <!-- <li><a class="nav-link" href="/timeline">Timeline</a></li> -->
+                <li><a class="nav-link" href="/celeb">Pronites</a></li>
+                <li><a class="nav-link" href="/Flagships">Flagship Events</a></li>
+                <li><a class="nav-link" href="/#registration">Register</a></li>
+                <li><a class="nav-link" href="/#contact">Contact Us</a></li>
+                <li><a class="nav-link" href="/team">Our Team</a></li>
+            </ul>
+        </nav>
+
+        <a id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </aside>
+<ul id="dots">
+    <li><a id="page1"></a></li>
+    <li><a id="page2"></a></li>
+</ul>
+
+<div id="modalContainer" class="modal__container">
+  <div class="modal">
+    <div class="modal__close-icon">
+      <i class="fa fa-2x fa-times modal__close"></i>
+    </div>
+    <div class="modal__head">
+      <div id="eventNameContainer" class="event__name"></div>
+    </div>
+    <div class="modal__body">
+      <iframe id="pdfContainer" frameborder="0"></iframe>
+      <form id="eventRegistration" action="/register/workshops" method="POST">
+
+      </form>
+    </div>
+    <div class="modal__actions">
+      <button class="modal__action modal__close"><i class="fa fa-times"></i> Cancel</button>
+     <button id="modalSubmit" class="modal__action modal__register"><i class="fa fa-check"></i> Register</button>
+    </div>
+  </div>
+</div>
+
+<div id="content" class="skw-pages">
+  <div class="skw-page skw-page-1 section active">
+    <div class="skw-page__half skw-page__half--left">
+      <div class="skw-page__skewed">
+        <div class="skw-page__content">
+          <img src="../src/images/metal.jpg"  alt="\"/>
+		</div>
+      </div>
+    </div>
+    <div class="skw-page__half skw-page__half--right">
+      <div class="skw-page__skewed">
+        <div class="skw-page__content">
+          <h2 class="skw-page__heading">Metal Sculpturing<br><span class="content"><span></h2>
+          <p class="skw-page__description">
+                The site of the welder working at workshops with his eye-protection glasses and the tantalizing welding machine and the white light shining in his glasses has always been a sight to behold. We bring to you a kindred activity. Get ready for engendering sculptures with metals, whittle your models creatively and bag prizes.
+            </p>
+          <button class="registration__button" data-society="FineArts" data-name="Metal Sculpturing">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="skw-page skw-page-2 section">
+    <div class="skw-page__half skw-page__half--left">
+    <div class="skw-page__skewed">
+        <div class="skw-page__content">
+          <h2 class="skw-page__heading"> Block Printing<br><span class="content"><span></h2>
+          <p class="skw-page__description">Everyone who has ransacked momma's wardrobe has found multitudinous block print fabrics. Akin to this, we bring to you an opportunity to try hands on the same. If you have a flair for art, get ready to showcase your skills.
+
+          </p>
+          <button class="registration__button" data-society="FilmAndPhotography" data-name="Selfie Contest">Register</button>
+    <!-- <button class="rules__button" data-society="FilmAndPhotography" data-name="Selfie Contest" data-isTeam="true">Rules</button>-->
+             </div>
+      </div>
+    </div>
+    <div class="skw-page__half skw-page__half--right">
+      <div class="skw-page__skewed">
+        <div class="skw-page__content">
+          <img src="../src/images/block.jpg" alt="\"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<script>
+    resizeNav();
+    window.addEventListener('resize', resizeNav)
+    document.getElementById('nav-toggle').addEventListener('click', toggleNav)
+    document.querySelectorAll(".nav-link").forEach(el => {
+        el.addEventListener('click', toggleNav)
+    })
+
+    function toggleNav () {
+        document.getElementById('nav-overlay').classList.toggle("open")
+        document.getElementById('nav-fullscreen').classList.toggle("open")
+        document.getElementById('nav-toggle').classList.toggle("open")
+    }
+
+    function resizeNav () {
+        let fscreen = document.getElementById('nav-fullscreen')
+        let overlay = document.getElementById('nav-overlay')
+        fscreen.style.height = "" + window.innerHeight + "px"
+        const radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+        const diameter = radius * 2;
+        overlay.style.width = "" + diameter + "px"
+        overlay.style.height = "" + diameter + "px"
+        overlay.style.marginTop = "" + -radius + "px"
+        overlay.style.marginLeft = "" + -radius + "px"
+    }
+    document.addEventListener('keyup', (e) => {
+        if(e.keyCode === 27) {
+            document.getElementById('nav-overlay').classList.remove("open")
+            document.getElementById('nav-fullscreen').classList.remove("open")
+            document.getElementById('nav-toggle').classList.remove("open")
+        }
+    })
+        </script>
+  <script src="../dist/workshops.pc.bundle.js"></script>
+  </body>
+</html>

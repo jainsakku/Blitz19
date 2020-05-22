@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blitzschlag | Entrepreneurship Development Cell Events</title>
+  <meta name="description" content="Entrepreneurship Development Cell events, Blitzschlag 2019" />
+  <meta name="keywords" content="Blitzschlag MNIT Events" />
+  <meta name="author" content="Saksham Jain"/>
+  <link rel="shortcut icon" href="../src/images/favicon.ico">
+    <link rel="stylesheet" href="../../base.css"/>
+  <link rel="stylesheet" href="../fullpage.min.css"/>
+  <link rel="stylesheet" href="./style.pc.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Cinzel" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script></head>
+<body>
+    <aside id="nav-container">
+        <div id="nav-overlay"></div>
+        <nav id="nav-fullscreen" role="navigation">
+            <ul>
+                <li><a class="nav-link" href="/#home">Home</a></li>
+                <li><a class="nav-link" href="/#events">Events</a></li>
+                <!-- <li><a class="nav-link" href="/timeline">Timeline</a></li> -->
+                <li><a class="nav-link" href="/celeb">Pronites</a></li>
+                <li><a class="nav-link" href="/Flagships">Flagship Events</a></li>
+                                <li><a class="nav-link" href="/workshops">EISYSTEMS Workshop</a></li>
+
+                <li><a class="nav-link" href="/#registration">Register</a></li>
+                <li><a class="nav-link" href="/payment">Hospitality</a></li>
+                <li><a class="nav-link" target="_blank" href="https://myimaginestore.com/university/">Imagine Lucky Draw</a></li>
+                <li><a class="nav-link" href="/#contact">Contact Us</a></li>
+                <li><a class="nav-link" href="/team">Our Team</a></li>
+            </ul>
+        </nav>
+
+        <a id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </aside>
+<ul id="dots">
+    <li><a id="page1"></a></li>
+    <li><a id="page2"></a></li>
+</ul>
+
+<div id="modalContainer" class="modal__container">
+  <div class="modal">
+    <div class="modal__close-icon">
+      <i class="fa fa-2x fa-times modal__close"></i>
+    </div>
+    <div class="modal__head">
+      <div id="eventNameContainer" class="event__name"></div>
+    </div>
+    <div class="modal__body">
+      <iframe id="pdfContainer" frameborder="0"></iframe>
+      <div id="teamLead"></div>
+      <form id="eventRegistration" action="/register/events" method="POST">
+
+      </form>
+     <div id="muted"></div>
+    </div>
+    <div class="modal__actions">
+      <button class="modal__action modal__close"><i class="fa fa-times"></i> Cancel</button>
+      <button id="modalSubmit" class="modal__action modal__register"><i class="fa fa-check"></i> Register</button>
+    </div>
+  </div>
+</div>
+
+<div id="content" class="skw-pages">
+  <div class="skw-page skw-page-1 section active">
+    <div class="skw-page__half skw-page__half--left">
+      <div class="skw-page__skewed">
+        <div class="skw-page__content">
+            <img src="../src/images/Startup Nivesh.jpg"  alt=""/>
+        </div>
+      </div>
+    </div>
+    <div class="skw-page__half skw-page__half--right">
+      <div class="skw-page__skewed">
+        <div class="skw-page__content">
+          <h2 class="skw-page__heading">Startup Nivesh<br></h2>
+          <p class="skw-page__description">Variety of startups, big money, stock IPOs, market swings - A rollercoaster ride into the financial kingdom.
+              Are you the real Wolf of Wall Street?
+              Discover the financial wizard in you and conquer the market with your prudence,
+              decisiveness and common sense.
+              Amassing maximum virtual money by funding startups and trading stocks is the only objective!</p>
+          <button class="rules__button" data-society="EDcell" data-name="Startup Nivesh" data-isTeam="true">Rules</button>
+          <button class="registration__button" data-society="EDcell" data-name="Startup Nivesh" data-isTeam="true">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="skw-page skw-page-2 section">
+    <div class="skw-page__half skw-page__half--left">
+    <div class="skw-page__skewed">
+        <div class="skw-page__content">
+          <h2 class="skw-page__heading">Aspire<br></h2>
+          <p class="skw-page__description">Do you think you can survive and emerge a champion in a battle of the wits? ED Cell and Blitzschlag presents to you ASPIRE Business Quiz! Test your business quotient and increase your awareness of the world as you delve into the world of business and be prepared for a battle that will test your wits, speed, and accuracy.</p>
+          <button class="rules__button" data-society="EDcell" data-name="Aspire" data-isTeam="true">Rules</button>
+          <button class="registration__button" data-society="EDcell" data-name="Aspire" data-isTeam="true">Register</button>
+        </div>
+      </div>
+    </div>
+    <div class="skw-page__half skw-page__half--right">
+        <div class="skw-page__skewed">
+          <div class="skw-page__content">
+            <img src="../src/images/Aspire.jpg" alt="" />
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <script>
+      resizeNav();
+      window.addEventListener('resize', resizeNav)
+      document.getElementById('nav-toggle').addEventListener('click', toggleNav)
+      document.querySelectorAll(".nav-link").forEach(el => {
+        el.addEventListener('click', toggleNav)
+      })
+
+      function toggleNav () {
+        document.getElementById('nav-overlay').classList.toggle("open")
+        document.getElementById('nav-fullscreen').classList.toggle("open")
+        document.getElementById('nav-toggle').classList.toggle("open")
+      }
+
+      function resizeNav () {
+        let fscreen = document.getElementById('nav-fullscreen')
+        let overlay = document.getElementById('nav-overlay')
+        fscreen.style.height = "" + this.window.innerHeight + "px"
+        const radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+        const diameter = radius * 2;
+        overlay.style.width = "" + diameter + "px"
+        overlay.style.height = "" + diameter + "px"
+        overlay.style.marginTop = "" + -radius + "px"
+        overlay.style.marginLeft = "" + -radius + "px"
+      }
+      </script>
+
+  <script src="../dist/events.pc.bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	/* overflow: hidden; */
+	font-size: 70%;
+}
+
+.fp-slidesNav {
+	z-index: 0;
+}
+
+.register, .pay-link {
+	text-decoration: none;
+	outline: none;
+	height: 3em;
+	padding: 0.7em;
+	border-radius: 3em;
+	width: 11em;
+	text-align: center;
+}
+
+a:hover,
+a:focus {
+	color: var(--baseBackground);
+	outline: none;
+}
+
+.flagship__image {
+	max-height: 100%;
+	max-width: 100%;
+	align-self: center;
+}
+
+#panache {
+	background-image:url("./src/images/panache.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+#rambaSamba {
+	background-image:url("./src/images/rambha.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+#kk {
+	background-image:url("./src/images/kk.jpg");
+	background-size: 200%;
+	background-position: center;
+	background-size: cover;
+}
+
+#edm {
+	background:url("./src/images/edm.jpg") no-repeat 50% 50%;
+	background-position: center;
+	background-size: cover;
+}
+
+#bob {
+	background-image:url("./src/images/drum.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.event__container {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.flagship__heading {
+	font-size: 10vh;
+	text-shadow: 3px 3px 3px var(--baseBackground);
+	animation: colorchange 15s infinite alternate;
+}
+
+.register {
+	background: var(--colorTextHighlight);
+	color: var(--baseBackground);
+	text-align: center;
+	font-size: 130%;
+	height: 3em;
+	width: 11em;
+	margin-bottom: 3em;
+	border: 1px solid var(--baseBackground);
+	opacity: 0.97;
+}
+
+@media screen and (max-width: 30em) {
+	#edm {
+		background-size: contain;
+	}
+}
+
+@keyframes colorchange {
+	0% {
+		color: var(--colorTextHighlight);
+	}
+
+	11% {
+		color: #E8BCA7;
+	}
+
+	22% {
+		color: #E0A0CB;
+	}
+
+	33% {
+		color: #d983ef;
+	}
+
+	44% {
+		color: #BCA7E8;
+	}
+
+	55% {
+		color: #A0CBE0;
+	}
+
+	66% {
+		color: #83efd9;
+	}
+
+	77% {
+		color: #A7E8BC;
+	}
+
+	88% {
+		color: #CBE0A0;
+	}
+
+	99% {
+		color: #EFD983;
+	}
+}

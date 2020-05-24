@@ -50,6 +50,10 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.1.14"
   },
+  "engines": {
+    "node": "10.17.0"
+  },
+  "engineStrict" : true,
   "browsersList": [
     "cover 99.5%",
     "last 1 version",
